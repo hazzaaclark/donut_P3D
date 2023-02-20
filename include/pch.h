@@ -2,5 +2,6 @@
 #define PCH_H
 
 #include "framework.h"
+#include "file.h"
 
 #endif 
