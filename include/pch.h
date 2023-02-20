@@ -1,7 +1,8 @@
 #ifndef PCH_H
 #define PCH_H
 
-#include "framework.h"
+#include "common.h"
 #include "file.h"
+#include "framework.h"
 
 #endif 
