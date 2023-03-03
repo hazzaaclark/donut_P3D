@@ -23,12 +23,12 @@ static FILE* GET_FILE()
 static FILE* REMOVE_FILE()
 {
 	FILE_MEMORY::REMOVE_FILE();
+	UNK_32* FREE_TEMP(FILENAME());
 }
 
 static SET_FILENAME* SET_FILE_NAME(void)
 {
 	if (FILENAME())
-	{
 		UNK_32* FREE_TEMP(FILENAME());
-	}
+	
 }
