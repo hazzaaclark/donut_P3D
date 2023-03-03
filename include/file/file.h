@@ -33,6 +33,13 @@ typedef enum DATA_TYPE : U32
 	UNKNOWN = 0
 };
 
+typedef enum FILE_TYPE : U32
+{
+	P3D = 0xFF443350, // P3D FILE 
+	P3D_ZLIB = 0x5A443350, // P3D'S COMPRESSION METHODS
+	ZLIB = 0x5A52, // ZLIB - THE COMPRESSION METHOD
+};
+
 typedef struct FILE{};
 typedef char* FILENAME;
 typedef FILE* SET_FILENAME(void);
@@ -68,5 +75,6 @@ static GET_LONG(&DATA = *TYPE(*UNK_ COUNT));
 
 #define GET_UNK(DATA, COUNT, TYPE)
 static GET_UNK(&DATA = *TYPE(*UNK_ COUNT));
+
 
 #endif
