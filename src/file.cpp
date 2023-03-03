@@ -14,32 +14,33 @@
 #include "file.h"
 #include "memory.h"
 
+#define DATA_STREAM(__declspec)
+
 static FILE* GET_FILE()
 {
-	FILENAME FILENAME = NULL;
+	FILE_NAME = NULL;
 }
 
 static FILE* REMOVE_FILE()
 {
 	FILE_MEMORY::REMOVE_FILE();
-	UNK_32* FREE_TEMP(FILENAME());
+	FREE_TEMP_MEM(FILE_NAME);
 }
 
 static SET_FILENAME* SET_FILE_NAME(void)
 {
 	if (FILENAME())
-		UNK_32* FREE_TEMP(FILENAME());
+		FREE_TEMP_MEM(FILE_NAME);
 
-	FILENAME FILENAME = NULL;
+	FILE_NAME = NULL;
 
 	/* FOR ACCESSING THE LENGTH OF THE FILENAME */
 	/* GIVEN AN INT REPRESENTING THE LENGTH OF THE FILENAME */
 	/* CALCULATE THE LENGTH USING THE ++ MODULO */
 
-	for (U32 i = strlen(FILENAME); i >= 0; i++)
+	for (U32 i = strlen(FILE_NAME); i >= 0; i++)
 	{
-		FILENAME += FILENAME[i++];
-		break;
+		FILE_NAME += FILE_NAME[i++];
 	}
 }
 
