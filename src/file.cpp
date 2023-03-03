@@ -14,8 +14,6 @@
 #include "file.h"
 #include "memory.h"
 
-#define DATA_STREAM(__declspec)
-
 static FILE* GET_FILE()
 {
 	FILE_NAME = NULL;
@@ -42,6 +40,11 @@ static SET_FILENAME* SET_FILE_NAME(void)
 	{
 		FILE_NAME += FILE_NAME[i++];
 	}
+}
+
+static MEMORY_STREAM* GET_MEMORY_STREAM()
+{
+	READ_BYTES(MEMORY_STREAM::DATA(), UNK_ SIZE);
 }
 
 GET_BYTE(&DATA_TYPE::BYTE = *U8());
