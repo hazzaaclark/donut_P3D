@@ -5,6 +5,8 @@
 /* THIS FILE PERTAINS TO THE FILE MANAGEMENT INFRASTRUCTURE */
 /* FOR PARSING PURE3D'S PREPRIATORY FILE FORMAT */
 
+#pragma once
+
 #ifndef PURE_3D_FILE
 #define PURE_3D_FILE
 
@@ -32,13 +34,19 @@ typedef enum DATA_TYPE : U32
 };
 
 typedef struct FILE{};
-typedef FILE* SET_FILENAME(const char** FILENAME);
-
+typedef char* FILENAME;
+typedef FILE* SET_FILENAME(void);
+typedef void(*SET_SIZE(void));
 
 typedef struct FILE_MEMORY : FILE
 {
 	FILE_MEMORY(UNK_8* DATA);
+	UNK_8 GET_MEMORY(void);
+	SET_FILENAME* SET_FILE();
+	typedef void(*REMOVE_FILE);
 };
+
+#endif
 
 
 /* MACROS FOR STATICALLY DECLARED DATA HANDLERS */
@@ -60,7 +68,5 @@ static GET_LONG(&DATA_TYPE::QWORD = *U64(*UNK_ COUNT));
 
 #define GET_UNK(DATA, COUNT, TYPE)
 static GET_UNK(&DATA_TYPE::UNKNOWN = *UNK_(*UNK_ COUNT));
-
-#endif
 
 #endif
