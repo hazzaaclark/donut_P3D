@@ -12,6 +12,7 @@
 /* NESTED INCLUDES */
 
 #include "common.h"
+#include "file.h"
 
 typedef enum ALLOC_TYPE
 {
@@ -39,8 +40,5 @@ typedef struct MEMORY_ROUTER
 
 typedef void(*SET_MEMORY_ROUTER(MEMORY_ROUTER));
 typedef MEMORY_ROUTER* GET_MEMORY_ROUTER(void);
-
-UNK_32* LOAD_TEMP(void*);
-UNK_32* FREE_TEMP(void*);
 
 #endif
