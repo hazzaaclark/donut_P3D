@@ -33,6 +33,11 @@ typedef enum DATA_TYPE : U32
 	UNKNOWN = 0
 };
 
+/* HEX VALUES FOR EACH PREPRIATORY TYPE IS */
+/* PROVIDED BY THE OPEN SOURCE REIMPLEMENTATION OF SHAR */
+
+/* https://github.com/plowteam/donut */
+
 typedef enum FILE_TYPE : U32
 {
 	P3D = 0xFF443350, // P3D FILE 
