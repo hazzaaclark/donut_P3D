@@ -14,18 +14,18 @@
 #include "file.h"
 #include "memory.h"
 
-static FILE* GET_FILE()
+static inline FILE* GET_FILE()
 {
 	FILE_NAME = NULL;
 }
 
-static FILE* REMOVE_FILE()
+static inline FILE* REMOVE_FILE()
 {
 	FILE_MEMORY::REMOVE_FILE();
 	FREE_TEMP_MEM(FILE_NAME);
 }
 
-static SET_FILENAME* SET_FILE_NAME(void)
+static inline FILE::SET_FILENAME* SET_FILE_NAME(void)
 {
 	if (FILE::FILENAME())
 		FREE_TEMP_MEM(FILE_NAME);
@@ -42,7 +42,7 @@ static SET_FILENAME* SET_FILE_NAME(void)
 	}
 }
 
-static MEMORY_STREAM* READ_BYTES_FROM_MEMORY(void)
+static inline MEMORY_STREAM* READ_BYTES_FROM_MEMORY(void)
 {
 	READ_BYTES(MEMORY_STREAM::DATA(), UNK_ SIZE);
 
