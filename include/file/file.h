@@ -47,13 +47,22 @@ typedef void(*SET_SIZE(void));
 
 typedef struct FILE_MEMORY : FILE
 {
-	FILE_MEMORY(UNK_8* DATA);
-	UNK_8 GET_MEMORY(void);
-	SET_FILENAME* SET_FILE();
+	typedef void(*OPEN(FILE_SYSTEM));
+	typedef void(*CLOSE);
 	typedef void(*REMOVE_FILE);
+	UNK_8* DATA;
+	UNK_8* GET_MEMORY(void);
+	SET_FILENAME* SET_FILE();
 };
 
 #endif
+
+#if defined(DONUT_FILE_HIERARCHY)
+#include <filesystem>
+#endif
+
+typedef struct FILE_SYSTEM{};
+typedef struct FILE_CHUNK{};
 
 
 /* MACROS FOR STATICALLY DECLARED DATA HANDLERS */
@@ -75,6 +84,5 @@ static GET_LONG(&DATA = *TYPE(*UNK_ COUNT));
 
 #define GET_UNK(DATA, COUNT, TYPE)
 static GET_UNK(&DATA = *TYPE(*UNK_ COUNT));
-
 
 #endif
