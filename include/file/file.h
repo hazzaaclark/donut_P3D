@@ -50,10 +50,7 @@ typedef struct FILE
 	typedef char* FILENAME;
 	typedef void(*SET_SIZE(void));
 	typedef FILE* SET_FILENAME(void);
-
 };
-typedef FILE* SET_FILENAME(void);
-typedef void(*SET_SIZE(void));
 
 typedef struct FILE_MEMORY : FILE
 {
@@ -62,7 +59,6 @@ typedef struct FILE_MEMORY : FILE
 	typedef void(*REMOVE_FILE);
 	UNK_8* DATA;
 	UNK_8* GET_MEMORY(void);
-	FILE::SET_FILENAME* SET_FILE();
 };
 
 #endif
