@@ -45,8 +45,13 @@ typedef enum FILE_TYPE : U32
 	ZLIB = 0x5A52, // ZLIB - THE COMPRESSION METHOD
 };
 
-typedef struct FILE{};
-typedef char* FILENAME;
+typedef struct FILE
+{
+	typedef char* FILENAME;
+	typedef void(*SET_SIZE(void));
+	typedef FILE* SET_FILENAME(void);
+
+};
 typedef FILE* SET_FILENAME(void);
 typedef void(*SET_SIZE(void));
 
@@ -57,7 +62,7 @@ typedef struct FILE_MEMORY : FILE
 	typedef void(*REMOVE_FILE);
 	UNK_8* DATA;
 	UNK_8* GET_MEMORY(void);
-	SET_FILENAME* SET_FILE();
+	FILE::SET_FILENAME* SET_FILE();
 };
 
 #endif
