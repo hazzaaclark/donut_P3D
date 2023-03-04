@@ -64,6 +64,9 @@ typedef struct FILE_MEMORY : FILE
 
 #if defined(DONUT_FILE_HIERARCHY)
 #include <filesystem>
+#if !defined(DONUT_NO_FILE)
+#error Unable to Parse the File Type, no files exist with this extension.
+#endif
 #endif
 
 typedef struct FILE_SYSTEM{};
