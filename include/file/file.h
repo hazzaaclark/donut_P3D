@@ -47,17 +47,17 @@ typedef enum FILE_TYPE : U32
 
 typedef struct FILE
 {
-	typedef char* FILENAME;
+	typedef UNK_8* FILENAME;
 	typedef void(*SET_SIZE(void));
 	typedef FILE* SET_FILENAME(void);
 };
 
 typedef struct FILE_MEMORY : FILE
 {
-	typedef void(*OPEN(FILE_SYSTEM));
+	typedef void(*OPEN(FILE_SYSTEM& FILE_SYSTEM));
 	typedef void(*CLOSE);
 	typedef void(*REMOVE_FILE);
-	UNK_8* DATA;
+	UNK_8* DATA();
 	UNK_8* GET_MEMORY(void);
 };
 
