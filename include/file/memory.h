@@ -14,6 +14,11 @@
 #include "common.h"
 #include "file.h"
 
+/* SYSTEM INCLUDES */
+
+#include <stdio.h>
+#include <iosfwd>
+
 typedef enum ALLOC_TYPE
 {
 	DEFAULT = 0,
@@ -42,7 +47,7 @@ typedef void(*SET_MEMORY_ROUTER(MEMORY_ROUTER));
 typedef MEMORY_ROUTER* GET_MEMORY_ROUTER(void);
 typedef UNK_32 FREE_TEMP(FILE::FILENAME);
 typedef UNK_32 LOAD_TEMP(FILE::FILENAME);
-
+typedef UNK_* READ_STRING();
 typedef struct MEMORY_STREAM { U8* DATA; };
 
 /* READ AND PARSE THE BYTES OF THE COMPRESSED FILE TYPE */
@@ -65,7 +70,7 @@ static READ_FILE(U8* POSITION = &POSITION(*SIZE(*UNK_ RESULT)))
 #ifndef TYPE_POINTERS
 #define TYPE_POINTERS
 
-FILE::FILENAME* FILE_NAME;
+FILE::FILENAME* FILE_NAME{};
 FREE_TEMP* FREE_TEMP_MEM(void*);
 LOAD_TEMP* ALLOC_TEMP_MEM(void*);
 
